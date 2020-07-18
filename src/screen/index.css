@@ -1,0 +1,126 @@
+.container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+}
+.loging-container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+}
+.signup-container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.btn-group {
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-around;
+}
+.main {
+  background-color: #fff;
+  box-shadow: 60px -16px teal;
+  border-radius: 50px;
+  height: 25vh;
+  width: 20vw;
+}
+.log {
+  background-color: #fff;
+  box-shadow: 1px 3px gainsboro;
+  border-radius: 10px;
+  height: 35vh;
+  width: 30vw;
+}
+.input-group {
+  text-align: center;
+}
+.Nav_link:link {
+  text-decoration: none;
+}
+.Nav_link_log:link {
+  text-decoration: none;
+}
+.textField {
+  display: block;
+}
+.text-group {
+  text-align: end;
+  margin-top: 20px;
+  margin-right: 50px;
+  font-size: 10px;
+}
+.logmain {
+  text-align: center;
+}
+.logo {
+  text-align: center;
+}
+
+.google-btn {
+  text-align: center;
+}
+.line-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+.line::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  left: -5px;
+  bottom: 5px;
+  border-top: 1px solid rgb(189, 189, 189);
+}
+.line::after {
+  content: '';
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  left: 5px;
+  bottom: 5px;
+  border-top: 1px solid rgb(189, 189, 189);
+}
+.title {
+  display: flex;
+  align-items: center;
+}
+.home-img {
+  text-align: center;
+  margin-left: 50px;
+}
+.signUp-img {
+  text-align: center;
+}
+
+.sign-btn {
+  margin-top: 30px;
+}
+.sign-logo {
+  width: 100px;
+  height: 30px;
+}
+h1,
+h3 {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  text-align: center;
+  font-size: 2rem;
+  color: black;
+  letter-spacing: 0em;
+}
+.login-btn {
+  text-align: center;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+.textField {
+  margin-top: 50px;
+}
