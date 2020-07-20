@@ -1,9 +1,33 @@
 .container {
   display: flex;
   height: 100vh;
+  width: 100vw;
   justify-content: center;
   align-items: center;
   background-image: url(https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.account-container {
+  background-color: rgba(231, 228, 228, 0.911);
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+.account-from {
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+  background-color: ghostwhite;
+  box-shadow: 1px -2px gainsboro;
+  border-radius: 50px;
+  margin-top: 10px;
+  height: 80%;
+  width: 500px;
 }
 .loging-container {
   display: flex;
@@ -11,6 +35,9 @@
   justify-content: center;
   align-items: center;
   background-image: url(https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 .signup-container {
   display: flex;
@@ -27,15 +54,15 @@
   background-color: #fff;
   box-shadow: 60px -16px teal;
   border-radius: 50px;
-  height: 25vh;
-  width: 20vw;
+  height: 250px;
+  width: 300px;
 }
 .log {
   background-color: #fff;
   box-shadow: 1px 3px gainsboro;
   border-radius: 10px;
-  height: 35vh;
-  width: 30vw;
+  height: 350px;
+  width: 350px;
 }
 .input-group {
   text-align: center;
@@ -90,12 +117,10 @@
   border-top: 1px solid rgb(189, 189, 189);
 }
 .title {
-  display: flex;
-  align-items: center;
+  text-align: center;
 }
 .home-img {
   text-align: center;
-  margin-left: 50px;
 }
 .signUp-img {
   text-align: center;
@@ -123,4 +148,14 @@ h3 {
 }
 .textField {
   margin-top: 50px;
+}
+.btn-group > button > span > a {
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+}
+.btn-group > button {
+  padding: 0;
+}
+.account-img {
 }
