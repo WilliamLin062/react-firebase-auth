@@ -1,5 +1,6 @@
 import React from 'react'
 import './Nav.css'
+import im from '../img/logo.png'
 import icon from '../img/icon.png'
 import Avatar from '@material-ui/core/Avatar'
 import Menu from '@material-ui/core/Menu'
@@ -7,10 +8,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import { Button, Divider } from '@material-ui/core'
 import { NavLink, Redirect } from 'react-router-dom'
 import Upload from '../utils/Upload'
-import ClickAwayListener from '@material-ui/core/ClickAwayListener'
 import app from '../firebase'
-import { AuthContext } from '../Auth'
-import logOut from '../utils/Logout'
 export default class Navigation extends React.Component {
   constructor(props) {
     super(props)
@@ -69,14 +67,41 @@ export default class Navigation extends React.Component {
       () => console.log('')
     )
   }
-
+  logOut() {
+    app
+      .auth()
+      .signOut()
+      .then(function () {
+        alert('登出!')
+      })
+      .catch(function (error) {
+        alert(error)
+      })
+    this.setState(
+      {
+        avatar: null,
+      },
+      () => console.log('logout')
+    )
+  }
+  check() {
+    if (!!this.state.isLoging) {
+      alert('請先登入')
+    }
+    this.setState(
+      {
+        anchorEl: null,
+      },
+      () => console.log('')
+    )
+  }
   render() {
     const { anchorEl, open, email, avatar, isLoging } = this.state
     return (
       <div className="nav">
         <div className="nav-icon">
           <a href="/">
-            <img src={icon} />
+            <img alt="logo" src={im} />
           </a>
         </div>
         <div className="nav-container">
@@ -105,8 +130,28 @@ export default class Navigation extends React.Component {
                 />
               </MenuItem>
               <Divider variant="middle" />
-              <MenuItem onClick={this.menuItenHandle}>控制台</MenuItem>
-              <MenuItem onClick={() => this.menuItenHandle}>
+              <MenuItem
+                onClick={() => this.check}
+                disabled={isLoging ? false : true}
+              >
+                {isLoging === true ? (
+                  <NavLink
+                    to="/ContorCenter"
+                    activeClassName="hurray"
+                    className="Nav_link"
+                  >
+                    控制台
+                  </NavLink>
+                ) : (
+                  <NavLink to="/" activeClassName="hurray" className="Nav_link">
+                    控制台
+                  </NavLink>
+                )}
+              </MenuItem>
+              <MenuItem
+                onClick={() => this.check}
+                disabled={isLoging ? false : true}
+              >
                 {isLoging === true ? (
                   <NavLink
                     to="/Account"
@@ -117,11 +162,16 @@ export default class Navigation extends React.Component {
                   </NavLink>
                 ) : (
                   <NavLink to="/" activeClassName="hurray" className="Nav_link">
-                    我的帳號
+                    我的帳號(請先登入)
                   </NavLink>
                 )}
               </MenuItem>
-              <MenuItem onClick={() => logOut()}>登出</MenuItem>
+              <MenuItem
+                disabled={isLoging ? false : true}
+                onClick={() => this.logOut()}
+              >
+                登出
+              </MenuItem>
             </Menu>
           </div>
           <div className="userName">{email}</div>

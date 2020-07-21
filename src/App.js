@@ -7,6 +7,7 @@ import SignUp from './screen/SignUp'
 import { AuthProvider, AuthContext } from './Auth'
 import PriviteRoute from './router/PriviteRoute'
 import Account from './screen/Account'
+import ControlCenter from './screen/ControlCenter'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/Loging" component={Loging} />
           <Route exact path="/SignUp" component={SignUp} />
           <Route exact path="/Account" component={Account}></Route>
+          <Route exact path="/ContorCenter" component={ControlCenter}></Route>
         </PriviteRoute>
       </Router>
     </AuthProvider>
